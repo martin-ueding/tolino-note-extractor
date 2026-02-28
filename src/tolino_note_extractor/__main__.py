@@ -1,3 +1,4 @@
+import collections
 import pprint
 import argparse
 import pathlib
@@ -11,9 +12,22 @@ def main() -> None:
     args = parser.parse_args()
 
     with open(args.notes_file) as f:
-        notes = f.read()
+        content = f.read()
 
-    pprint.pprint(match_notes(notes))
+    sorted_notes = collections.defaultdict(list)
+    for note in match_notes(content):
+        if note["type"] != "Markierung":
+            continue
+        sorted_notes[f"{note['author']}: {note['title']}"].append(note["note"])
+
+    for author_title, notes in sorted(sorted_notes.items()):
+        print(f"# {author_title}")
+        print()
+        for note in notes:
+            print(note)
+            print()
+            print("---")
+            print()
 
 
 if __name__ == "__main__":
