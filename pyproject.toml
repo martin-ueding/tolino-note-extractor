@@ -7,12 +7,10 @@ requires-python = ">=3.14"
 dependencies = []
 
 [project.scripts]
-tolino-notes = "tolino_note_extractor.__main__:main"
+extract-tolino-notes = "tolino_note_extractor.__main__:main"
 
 [dependency-groups]
-dev = [
-    "pytest>=9.0.2",
-]
+dev = ["pytest>=9.0.2"]
 
 [build-system]
 requires = ["hatchling"]
