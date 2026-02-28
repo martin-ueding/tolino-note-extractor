@@ -1,9 +1,8 @@
-#!/usr/bin/env python
-
 import pprint
-import re
 import argparse
 import pathlib
+
+from .matching import match_notes
 
 
 def main() -> None:
@@ -14,7 +13,7 @@ def main() -> None:
     with open(args.notes_file) as f:
         notes = f.read()
 
-
+    pprint.pprint(match_notes(notes))
 
 
 if __name__ == "__main__":
