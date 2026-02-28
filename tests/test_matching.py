@@ -26,11 +26,13 @@ def test_single() -> None:
         {
             "title": "The Mythical Man-Month",
             "author": "Brooks, Jr. Frederick P.",
+            "type": "Markierung",
             "note": ' For the human makers of things, the incompletenesses and inconsistencies of our ideas become clear only during implementation. Thus it is that writing, experimentation, "working out" are essential disciplines for the theoretician.',
         },
         {
             "title": "Cibola Burn",
             "author": "Corey, James S. A.",
+            "type": "Markierung",
             "note": """“I’m sorry, sir,” Wei said. “I was out of line.”
 
   “Not a problem, because it’s not going to happen again,” Murtry said. """,
