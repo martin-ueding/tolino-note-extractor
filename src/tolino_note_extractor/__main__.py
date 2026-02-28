@@ -20,14 +20,15 @@ def main() -> None:
             continue
         sorted_notes[f"{note['author']}: {note['title']}"].append(note["note"])
 
-    for author_title, notes in sorted(sorted_notes.items()):
+    for author_title, notes in sorted_notes.items():
         print(f"# {author_title}")
         print()
-        for note in notes:
-            print(note)
-            print()
-            print("---")
-            print()
+        print("\n\n---\n\n".join(map(dedent_lines, notes)))
+        print()
+
+
+def dedent_lines(s: str) -> str:
+    return "\n".join([line.strip() for line in s.split("\n")])
 
 
 if __name__ == "__main__":
