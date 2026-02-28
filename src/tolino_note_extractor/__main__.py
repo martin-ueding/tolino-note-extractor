@@ -23,8 +23,11 @@ def main() -> None:
     for author_title, notes in sorted_notes.items():
         print(f"# {author_title}")
         print()
-        print("\n\n---\n\n".join(map(dedent_lines, notes)))
-        print()
+        for note in notes:
+            print(dedent_lines(note))
+            print()
+            print("---")
+            print()
 
 
 def dedent_lines(s: str) -> str:
