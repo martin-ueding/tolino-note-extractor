@@ -3,6 +3,7 @@ name = "tolino-note-extractor"
 version = "0.2.0"
 description = "Add your description here"
 readme = "README.md"
+license = { text = "MIT" }
 requires-python = ">=3.14"
 dependencies = []
 
